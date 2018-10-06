@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todolist">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <!-- NEED all 3 bootstrap/dist folders, AND jquery.min.js file -->
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <!-- Custom layouts-->
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/todostyle.css">
+    <link rel="stylesheet" href="css/spastyle.css">
+
+    <script src="angular.min.js"></script>
+
+    <script>
+        var appName = angular.module('todolist', []);
+
+        appName.controller('todoCtrl', function ($scope) {
+            $scope.entries = [];
+
+            //Limit input to maxLength chars
+            $scope.content = '';
+            var oldVal = '';
+            var maxLength = 30;
+
+            $scope.$watch('content', function () {
+                if ($scope.content.length != null && $scope.content.length < maxLength) {
+                    oldVal = $scope.content;
+                }
+                else {
+                    $scope.content = oldVal;
+                }
+
+            });
+
+            //Add function
+            $scope.addEntry = function () {
+                if ($scope.content != '') {
+                    $scope.entries.push({
+                        'content': $scope.content,
+                        'isCompleted': $scope.isCompleted
+                    });
+                    $scope.content = "";
+                    $scope.isCompleted = "";
+                }
+
+            }
+
+            //Remove function
+            $scope.remove = function (e) {
+                var i = $scope.entries.indexOf(e);
+                $scope.entries.splice(i, 1);
+            }
+
+        });
+    </script>
+
+
+
+</head>
+
+<body ng-controller='todoCtrl' class="bg-info">
+    <div class="container-fluid myheader">
+
+        <div class="row">
+            
+           
+
+            <div class="spa-body-frame">
+                <div class="spa-body" style="margin-left:4em; margin-top:4em; ">
+                    
+                    <h1>To-do List</h1>
+
+                    <form class="form-inline" role="form" ng-submit='addEntry()' method="post">
+                        <div class="form-group">
+                            <input class="form-control todoText" type="text" ng-model="content" required placeholder="Enter note">
+                        </div>
+                        <button class="form-control btn btn-default glyphicon glyphicon-plus" type="submit"></button>
+                    </form>
+
+
+                    <table class="table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="pull-left" ng-show="entries.length > 0">Done</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='entry in entries'>
+                                <td class="parent">
+                                    <div class="removed">
+                                        <button class="close" type="button" ng-click="remove(entry)" ng-show="entry.isCompleted">&times;</button>
+                                    </div>
+                                    <p ng-class="{ 'text-muted crossed' : entry.isCompleted}">
+                                        <i>{{entry.content}}</i>
+                                        <input class="checkbox-inline pull-left" type="checkbox" ng-model="entry.isCompleted"
+                                            ng-click="isCompleted = !isCompleted">
+                                    </p>
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

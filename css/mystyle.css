@@ -1,0 +1,51 @@
+#top{
+    margin-top: 1em;
+}
+
+.myheader{
+    padding-top: 8em;
+}
+
+
+
+#clickable:hover {
+    cursor: pointer;
+}
+
+p{
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+
+.jumbotron {
+    padding-bottom: 200px;
+
+    /* Placing image, no tile, centered, and 100% width*/
+    background-image: url('../img/img_bookmark.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+
+    /* Crop image to max width, and rectangular corners*/
+    background-size:cover;
+    border-radius: 0;
+
+}
+
+.container-fluid{
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+
+.dl-horizontal dt{
+    text-align: left;
+}
+
+/*Animation on hover and transition*/
+.grow { transition: all .05s ease-in-out; }
+.grow:hover {
+    transform: scale(1.05);
+}

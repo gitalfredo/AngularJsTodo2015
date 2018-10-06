@@ -1,0 +1,66 @@
+
+
+/* Long columns*/
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+.container-fluid{
+    height: 100%;
+}
+
+
+.spa-top{
+    height: 8em;
+
+}
+
+/* Center div*/
+.spa-header{
+    float: none;
+    text-align: center;
+}
+
+.spa-brand{
+    float: none;
+}
+
+
+
+/* Pull width to 100%: margin 0*/
+.row{
+    height: 100%;
+    margin: 0;
+}
+
+/* Frames*/
+.spa-nav-frame{
+    height: 100%;
+
+    padding: 0;
+
+}
+
+.spa-body-frame{
+    height: 100%;
+
+    padding: 0;
+}
+
+
+/* Layout style*/
+.spa-nav{
+    padding-top: 20em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+.spa-body{
+    padding-left: 1em;
+    padding-right: 1em;
+}

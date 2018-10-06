@@ -1,0 +1,45 @@
+.checkbox-inline{
+    width: 2em;
+    height: 2em;
+    margin: 0!important;
+}
+
+
+.table-condensed>thead>tr>th{
+    margin-top: 2em;
+}
+
+
+.table-condensed{
+    width: 25em;
+}
+
+
+.crossed{
+    text-decoration: line-through;
+}
+
+.removed{
+    width: 5%;
+
+}
+
+/* Parent and button for superposition*/
+.parent{
+    position: relative;
+}
+
+.removed button{
+    position: absolute;
+    right: 0;
+    padding: 8px 10px;
+}
+
+.parent i{
+    margin-left: 1em;
+}
+
+/* Input box*/
+.todoText{
+    width: 18em!important;
+}
