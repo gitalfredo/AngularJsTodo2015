@@ -1,9 +1,12 @@
+body *{
+    color: #333 ;
+}
 #top{
     margin-top: 1em;
 }
 
 .myheader{
-    padding-top: 8em;
+    padding-top: 4em;
 }
 
 
