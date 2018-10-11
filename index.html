@@ -82,7 +82,7 @@
 
                     <form class="form-inline" role="form" ng-submit='addEntry()' method="post">
                         <div class="form-group">
-                            <input class="form-control todoText" type="text" ng-model="content" required placeholder="Enter note">
+                            <input class="form-control todoText" type="text" ng-model="content" required placeholder="Enter note"/>
                         </div>
                         <button class="form-control btn btn-default glyphicon glyphicon-plus" type="submit"></button>
                     </form>
@@ -103,7 +103,7 @@
                                     <p ng-class="{ 'text-muted crossed' : entry.isCompleted}">
                                         <i>{{entry.content}}</i>
                                         <input class="checkbox-inline pull-left" type="checkbox" ng-model="entry.isCompleted"
-                                            ng-click="isCompleted = !isCompleted">
+                                            ng-click="isCompleted = !isCompleted"/>
                                     </p>
                                 </td>
 
